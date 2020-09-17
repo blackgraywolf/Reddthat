@@ -1,0 +1,15 @@
+
+<% if logged_in?%>
+<h1>Choose a Topic</h1>
+
+  <% @topics.each do |topic| %>
+   
+      <a  href="/topics/<%=topic.id%>"><%= topic.text %></a>
+     <br>
+  <% end %>
+  <br>
+  <p><a href="/topics/new">Create New Topic</a></p>
+<p><a href="/logout">Log Out</a></p>
+<% else %>
+<% redirect to "/failure" %>
+<% end %>
